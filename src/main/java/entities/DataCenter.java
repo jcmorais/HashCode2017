@@ -60,6 +60,17 @@ public class DataCenter {
         this.cachesServers = cachesServers;
     }
 
+    public void preencheTabela (int tabela[][] ){
+        int i=0;
+        int j=0;
+        for( Video v: videos){
+            for( CacheServer cs: cacheservers){
+                int a = cs.poupo(v);
+                tabela[i][j]= a;
+                i++;
+                } 
+            j++;
+        }
 
     @Override
     public String toString() {

@@ -29,6 +29,16 @@ public class CacheServer {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+    
+      public int poupo(Video v){
+        int r=0;
+        for(endPoint e: endPoints){
+            int n = e.nRequests(v);
+            if(n>0){
+            r+= n*(e.getLatencyToDC() - latencia.get(e.getID())
+                    }
+        }
+    };
 
     @Override
     public String toString() {
