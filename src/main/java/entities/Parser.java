@@ -20,7 +20,7 @@ public class Parser {
 
 
     public DataCenter test() throws IOException {
-        String fileName = "kittens.in";
+        String fileName = "me_at_the_zoo.in";
 
         String path = this.getClass().getClassLoader().getResource(fileName).getPath();
         String file = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
