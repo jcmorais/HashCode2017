@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -12,6 +13,18 @@ public class EndPoint {
     private Map<Integer, Integer> requests; //videoID to  numberOfRequests
     private Map<Integer, Integer> cacheServers; //cacheID,  latency
 
+
+    public EndPoint(int id, int latencyToDC,  Map<Integer, Integer> cacheServers) {
+        this.id = id;
+        this.latencyToDC = latencyToDC;
+        this.requests = new HashMap<>();
+        this.cacheServers = cacheServers;
+    }
+
+
+    public void addRequest(int videoId, int numberOfRequests){
+        this.requests.put(videoId, numberOfRequests);
+    }
 
 
     public int getId() {
@@ -44,5 +57,16 @@ public class EndPoint {
 
     public void setCacheServers(Map<Integer, Integer> cacheServers) {
         this.cacheServers = cacheServers;
+    }
+
+
+    @Override
+    public String toString() {
+        return "EndPoint{" +
+                "id=" + id +
+                ", latencyToDC=" + latencyToDC +
+                ",\n requests=" + requests +
+                ",\n cacheServers=" + cacheServers +
+                "}\n";
     }
 }

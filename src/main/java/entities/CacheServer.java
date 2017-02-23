@@ -29,4 +29,12 @@ public class CacheServer {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public String toString() {
+        return "CacheServer{" +
+                "id=" + id +
+                ", capacity=" + capacity +
+                "}\n";
+    }
 }
